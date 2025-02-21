@@ -1,49 +1,80 @@
 import { motion } from "framer-motion";
+import { Mail, Trophy, Users } from "lucide-react";
 
 const About = () => {
-  return <>
-    <section className="relative w-full py-16 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left: Text Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.6 }}
+  
+    return (
+    <section className="w-full py-16 bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Header */}
+          <h2 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            About Our Project
+          </h2>
+          <p className="mt-4 text-lg text-gray-300 text-center max-w-3xl mx-auto">
+            Our platform is designed to enhance user experience by offering **real-time engagement, leaderboards, and seamless collaboration**.
+            Built with cutting-edge technologies, we ensure an **intuitive and scalable** solution.
+          </p>
+        </motion.div>
+
+        {/* Features Section */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Leaderboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="p-6 bg-gray-800 rounded-xl shadow-lg flex flex-col items-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              About Our Project
-            </h2>
-            <p className="mt-4 text-lg text-gray-300">
-              Our platform is designed to provide seamless solutions, integrating the latest web technologies 
-              to create an intuitive and engaging experience. Built with performance and scalability in mind, 
-              our project ensures an effortless user journey.
+            <Trophy className="text-yellow-400 w-12 h-12" />
+            <h3 className="text-xl font-semibold mt-4 text-white">Leaderboard</h3>
+            <p className="text-gray-300 text-center mt-2">
+              Compete and climb the ranks on our dynamic leaderboard.
             </p>
-            <p className="mt-2 text-lg text-gray-300">
-              We aim to bridge the gap between **innovation and functionality**, 
-              empowering users with tools that drive efficiency and creativity.
-            </p>
-            <button className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl text-white font-semibold text-lg transition">
-              Learn More
-            </button>
           </motion.div>
 
-          {/* Right: Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.6 }}
+          {/* Community */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="p-6 bg-gray-800 rounded-xl shadow-lg flex flex-col items-center"
           >
-            <img 
-              src="https://source.unsplash.com/500x400/?technology,abstract" 
-              alt="About Us" 
-              className="rounded-2xl shadow-lg"
-            />
+            <Users className="text-blue-400 w-12 h-12" />
+            <h3 className="text-xl font-semibold mt-4 text-white">Community</h3>
+            <p className="text-gray-300 text-center mt-2">
+              Engage with a vibrant and supportive developer community.
+            </p>
           </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="p-6 bg-gray-800 rounded-xl shadow-lg flex flex-col items-center"
+          >
+            <Mail className="text-green-400 w-12 h-12" />
+            <h3 className="text-xl font-semibold mt-4 text-white">Contact Us</h3>
+            <p className="text-gray-300 text-center mt-2">
+              Reach out at <a href="mailto:contact@yourproject.com" className="text-white underline">contact@yourproject.com</a>
+            </p>
+          </motion.div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-10 text-center">
+          <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl text-white font-semibold text-lg transition">
+            Explore More
+          </button>
         </div>
       </div>
     </section>
-  </>
+    );
 }
 
 export default About
