@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+* {
+    font-family: "ZTalk";
+}
+
+@font-face {
+    font-family: "ZTalk";
+    src: url("./fonts/ZTTalk-Bold.otf");
+}
+
+@font-face {
+    font-family: "IBrand";
+    src: url("./fonts/ibrand.otf");
+}
+
+@layer utilities {
+    .font-ztalk {
+        font-family: "ZTalk";
+    }
+    .font-ibrand {
+        font-family: "IBrand";
+    }
+}
