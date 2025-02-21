@@ -13,21 +13,22 @@ app.use(bodyParser.urlencoded({extended : true}));
 connectDb();
 
 app.use(cors({
-    origin : process.env.ACCESS_URL,
-    credentials : true
-}))
+    origin: [process.env.FRONTEND_URL, 'https://accounts.google.com'],
+    credentials: true
+}));
 
 
 app.get("/", (req,res) =>{
 
     console.log(process.env.ACCESS_URL);
 
-    res.send("hey there");
+    res.send("<h1>hey there</h1>");
 })
 
 app.use(userRouter);
 
+const PORT = process.env.PORT || 5000;
 
-app.listen(5000 , () =>{
-    console.log("server is running on port http://localhost:5000/");
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

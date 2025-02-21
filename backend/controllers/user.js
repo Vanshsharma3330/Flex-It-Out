@@ -58,7 +58,7 @@ const sendVerificationEmail = async ({ _id, email }, res) => {
   const mailOptions = {
     from: process.env.AUTH_EMAIL,
     to: email,
-    subject: "Verify Your Email for QuizNova",
+    subject: "Verify Your Email for Flex-It-Out",
     html: `<!DOCTYPE html>
         <html>
         
@@ -155,7 +155,7 @@ const sendVerificationEmail = async ({ _id, email }, res) => {
                             <tr>
                                 <td bgcolor="#ffffff" align="center" valign="top"
                                     style="padding: 40px 20px 20px 20px; border-radius: 2px 2px 0px 0px; color: #fff; background-color:#0A033C ; font-family: 'Poppins', sans-serif;  font-size: 45px; font-weight: 700; letter-spacing: 2px; line-height: 48px;">
-                                    <h1 style="font-size: 40px; font-weight:700; margin: w-50;">QuizNova</h1>
+                                    <h1 style="font-size: 40px; font-weight:700; margin: w-50;">Flex-It-Out</h1>
                                 </td>
                             </tr>
                         </table>
@@ -372,11 +372,7 @@ const login_user = async (req, res) => {
           expires: expireDate,
           httpOnly: false,
         });
-        res.json({
-          success: "logged in successfully",
-          name: user.firstname,
-          email: email,
-        });
+        res.redirect("/")
       } else {
         res.json({ warning: "incorrect password." });
       }
