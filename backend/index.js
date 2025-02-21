@@ -4,17 +4,25 @@ const app = express();
 require("dotenv").config({ path: "./.env" });
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const userRouter = require("./routes/user")
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
+app.use(cors({
+    origin : process.env.ACCESS_URL,
+    credentials : true
+}))
+
 
 app.get("/", (req,res) =>{
 
-    console.log(process.env.ALLOWED_ORIGIN);
+    console.log(process.env.ACCESS_URL);
 
     res.send("hey there");
 })
+
+app.use(userRouter);
 
 
 app.listen(5000 , () =>{
