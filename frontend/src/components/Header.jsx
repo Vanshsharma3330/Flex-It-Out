@@ -11,13 +11,13 @@ export default function Header() {
     };
 
     return (
-        <div className="flex justify-between items-center px-4 py-2 fixed z-10 w-full bg-white/80 backdrop-blur-sm bg-blend-hard-light">
+        <div className="fixed flex justify-between items-center px-4 py-2 z-10 w-full bg-white/80 backdrop-blur-sm bg-blend-hard-light">
             <h1 className="uppercase tracking-tighter text-3xl flex items-center gap-2">
                 <GoNorthStar />
                 FlexIt-Out
             </h1>
 
-            <ul className="hidden md:flex justify-between items-center gap-4">
+            <ul className="hidden md:flex justify-between items-center gap-4 absolute left-1/2 transform -translate-x-1/2">
                 <li>
                     <Link
                         to="/about"
@@ -28,10 +28,10 @@ export default function Header() {
                 </li>
                 <li>
                     <Link
-                        to="/trainings"
+                        to="/workout"
                         className="hover:text-gray-600 transition-colors duration-300"
                     >
-                        Trainings
+                        Workout
                     </Link>
                 </li>
                 <li>
@@ -44,10 +44,10 @@ export default function Header() {
                 </li>
                 <li>
                     <Link
-                        to="/contacts"
+                        to="/contest"
                         className="hover:text-gray-600 transition-colors duration-300"
                     >
-                        Contacts
+                        Contest
                     </Link>
                 </li>
             </ul>
