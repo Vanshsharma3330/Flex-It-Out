@@ -5,7 +5,7 @@ const connectDb = async() =>{
     // mongodb+srv://virenderdhillon104:Z8d7rRnxEq7TaCLh@cluster0.d3nhn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
     try{
         
-        await mongoose.connect("mongodb://localhost:27017").then(() =>{
+        await mongoose.connect("mongodb://localhost:27017/flexitout").then(() =>{
             console.log("Db connected");
         });
     }catch(err){

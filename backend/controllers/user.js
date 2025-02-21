@@ -300,7 +300,7 @@ const verify_user = async (req, res) => {
 const register_user = async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
 
-  //checking if user exists in database
+//   checking if user exists in database
   const userExists = await userModel.findOne({ email: email });
 
   if (userExists) {
@@ -336,7 +336,7 @@ const register_user = async (req, res) => {
     await user.save().then((result) => {
       console.log(result);
       sendVerificationEmail(result, res);
-    });
+    }).catch(err => console.log(err));
   } catch (err) {
     console.log(err);
     res.json({ error: "Internal server error" });

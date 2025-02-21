@@ -4,10 +4,13 @@ const app = express();
 require("dotenv").config({ path: "./.env" });
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const userRouter = require("./routes/user")
+const userRouter = require("./routes/user");
+const { connectDb } = require("./utils/mongodb");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended : true}));
+
+connectDb();
 
 app.use(cors({
     origin : process.env.ACCESS_URL,
