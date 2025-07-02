@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import ReactPlayer from "react-player";
+import video3 from "../../public/video3.mp4";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -47,11 +49,10 @@ const SignUp = () => {
     const handleGoogleSignup = async () => {
         try {
             // Use the same Google auth URL endpoint
-            const response = await axios.get('/auth/google/url');
-            
+            const response = await axios.get("/auth/google/url");
+
             // Redirect to Google's OAuth page
             window.location.href = response.data.url;
-            
         } catch (error) {
             console.error("Error with Google signup:", error);
             alert("Failed to initialize Google signup");
@@ -61,7 +62,17 @@ const SignUp = () => {
     return (
         <div className="main-container bg-black flex w-full h-screen items-center justify-center gap-8">
             {/* Left Container */}
-            <div className="left-flex w-[35%] h-[95%] bg-white rounded-2xl shadow-lg flex items-center justify-center"></div>
+            <div className="video-container h-screen rounded-4xl overflow-hidden my-4">
+                <ReactPlayer
+                    url={video3}
+                    playing={true}
+                    loop={true}
+                    width="100%"
+                    height="100%"
+                    controls={false}
+                    muted={true}
+                />
+            </div>
 
             {/* Right Container */}
             <div className="right-flex w-[35%] h-[95%] bg-white rounded-2xl shadow-lg flex flex-col items-center justify-center px-8">
@@ -170,7 +181,7 @@ const SignUp = () => {
                 </div>
 
                 {/* Google Sign-In */}
-                <button 
+                <button
                     onClick={handleGoogleSignup}
                     type="button"
                     className="w-full flex items-center justify-center gap-3 border border-gray-400 text-gray-700 p-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300"

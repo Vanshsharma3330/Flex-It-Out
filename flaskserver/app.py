@@ -28,7 +28,7 @@ class ExerciseRecognizer:
         self.master_landmarks = self.load_master_landmarks()
         
     def load_master_landmarks(self):
-        csv_file = f"{self.exercise_type}_master.csv"
+        csv_file = f"{self.exercise_type}_mas.csv"
         if os.path.exists(csv_file):
             df = pd.read_csv(csv_file)
             return df.values.tolist()

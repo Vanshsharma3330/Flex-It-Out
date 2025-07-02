@@ -95,9 +95,12 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <button className="uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+                            <Link
+                                to="/login"
+                                className="uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+                            >
                                 Join Today
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -145,16 +148,22 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <button className="uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+                            <Link
+                                to="/login"
+                                className="uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+                            >
                                 Join Today
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
             )}
-            <button className="hidden md:block uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+            <Link
+                to="/login"
+                className="uppercase border rounded-full px-4 py-1 text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+            >
                 Join Today
-            </button>
+            </Link>
         </div>
     );
 }
