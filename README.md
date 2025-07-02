@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Flex-It-Out A Smart AI-Powered Fitness Companion🏆
+# 🏋️‍♂️ Flex-It-Out A Smart AI-Powered Fitness Companion
 
 Flex-It-Out is an innovative fitness tracking application that leverages computer vision and AI to provide real-time exercise form analysis, rep counting, and personalized yoga sessions. Built with modern web technologies, it offers an immersive fitness experience right from your browser.
 
